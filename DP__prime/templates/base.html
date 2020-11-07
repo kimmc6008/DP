@@ -1,0 +1,71 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DP_prime</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{#    <link href="{% static 'fontawesome/css/all.css' %}" rel="stylesheet">#}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{#    <link rel="shortcut icon" href="{% static 'images/logot.png' %}">#}
+
+
+</head>
+<body>
+<style>
+    .hello-msg{
+        font-size: 18px;
+        color: #000000;
+        margin-right: 20px;
+    }
+    .left{
+        margin-left: 0.3cm;
+    }
+    .right{
+        margin-right: 0.3cm;
+    }
+    .nav-link{
+        font-size: 18px;
+        color: #000000;
+        margin-right: 20px;
+    }
+    .dpname{
+        font-size: 23px;
+        font-family: "Times New Roman", Times, serif;
+    }
+    #grad1 {
+        height: 100%;
+      background-image: linear-gradient(to right, #303334 10%, #ffffff 10%, #ffffff 90%, #303334 90%);
+    }
+    html, body {
+        height: 100%;
+    }
+</style>
+{% include 'navbar.html' %}
+<div id="grad1">
+
+<div class="container">
+    <br>
+    <h1 style="text-align: center">Welcome, {{ request.user }}! What's your plan for today?</h1>
+    <br>
+
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <script async src="https://cse.google.com/cse.js?cx=012125041764549585085:r66tgumidc0"></script>
+        <div class="gcse-search" enableAutoComplete="true"></div>
+
+    </form>
+    <br>
+</div>
+
+    <script>
+        var today = new Date();
+        document.getElementById('time').innerHTML=today;
+    </script>
+
+</div>
+</body>

@@ -1,0 +1,39 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light py-4" style="background-color: #8cd582;">
+    <a class="navbar-brand" href="/">
+        <img src="{% static 'images/logot.png' %}" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
+
+    </a>
+    <strong class="dpname">DP Prime: Your Daily Planner &nbsp; &nbsp; &nbsp;</strong>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+        </li>
+
+        </ul>
+
+
+
+    </div>
+    <i>
+        Today's date is :
+        <strong>
+         <span id="time"></span>
+        </strong>
+   </i>
+
+
+
+    <span class="hello-msg">Hello, {{ request.user }}</span>
+{#    <span ><a class="hello-msg" href="{% url 'logout' %}">Logout</a></span>#}
+
+</nav>
